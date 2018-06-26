@@ -1,0 +1,145 @@
+/**********************************
+ * Navbar design.                 *
+ **********************************/
+#navbar {
+    visibility: hidden;
+}
+
+@media only screen and (min-width: 768px) {
+    #navbar {
+        background-color: #37474F;
+        box-sizing: content-box;
+        height: 50px;
+        list-style-type: none;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        position: fixed;
+        text-align: center;
+        top: 0;
+        visibility: visible;
+        width: 100%;
+    }
+}
+
+.menuItem {
+    color: #98A0A5;
+    float: left;
+    height: 50px;
+    padding: 10px 0px;
+
+    transition: background-color 0.4s;
+    -webkit-transition: background-color 0.4s;
+}
+
+.menuItem.active {
+    color: #DCE4E9;
+}
+
+.menuItem:hover {
+    background-color: #59696F;
+    color: #DCE4E9;
+    cursor: pointer;
+    text-decoration: underline;
+
+    transition: text-decoration-color 0.4s;
+    -webkit-transition: text-decoration-color 0.4s;
+}
+
+.menuItem > a {
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    -webkit-text-decoration-color: transparent;
+
+    transition: background-color 0.4s;
+    -webkit-transition: background-color 0.4s;
+}
+
+.menuItem:hover > a {
+    text-decoration: underline;
+    text-decoration-color: #DCE4E9;
+    -webkit-text-decoration-color: #DCE4E9;
+
+    transition: text-decoration-color 0.4s;
+    -webkit-transition: text-decoration-color 0.4s;
+}
+
+i {
+    margin-right: 10px;
+    padding-bottom: 2px;
+    vertical-align: middle !important;
+}
+
+.logout {
+    margin-left: 8.33%;
+}
+
+/**********************************
+ * Mobile navbar design.          *
+ **********************************/
+#navbarMobile {
+    background-color: #37474F;
+    height: 50px;
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0;
+    padding-top: 10px;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 100%;
+
+    transition: height 1s;
+    -webkit-transition: height 1s;
+}
+
+@media only screen and (min-width: 768px) {
+    #navbarMobile {
+        visibility: hidden;
+    }
+}
+
+#navbarMobile > li {
+    margin: 0px 0px 6px -20px;
+    width: 100%;
+}
+
+#toggleNav {
+    border-radius: 7px;
+    color: #DCE4E9;
+    height: 50px;
+    padding: 6px 20px;
+    text-decoration: none;
+    visibility: visible;
+}
+
+@media only screen and (min-width: 768px) {
+    #toggleNav {
+        visibility: hidden;
+    }
+}
+
+#toggleNav:hover {
+    background-color: #59696F;
+    cursor: pointer;
+}
+
+.mobileMenuItem {
+    color: #98A0A5;
+    float: left;
+    padding: 5px 0px;
+    margin-top: 5px;
+
+    transition: background-color 0.4s;
+    -webkit-transition: background-color 0.4s;
+}
+
+.mobileMenuItem:hover {
+    background-color: #59696F;
+    color: #DCE4E9;
+    cursor: pointer;
+    text-decoration: underline;
+
+    transition: text-decoration-color 0.4s;
+    -webkit-transition: text-decoration-color 0.4s;
+}

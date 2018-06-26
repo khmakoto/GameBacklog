@@ -1,0 +1,26 @@
+/**********************************
+ * Footer design.                 *
+ **********************************/
+#navfooter {
+    background-color: #37474F;
+    bottom: 0;
+    box-sizing: content-box;
+    color: #98A0A5;
+    font-size: 14px;
+    height: 60px;
+    overflow: hidden;
+    margin: 0;
+    padding: 5px 0 0 0;
+    position: fixed;
+    text-align: center;
+    visibility: visible;
+    width: 100%;
+}
+
+#navfooter > p {
+    padding: 3px 0;
+}
+
+#navfooter > p > a {
+    color: #98A0A5;
+}

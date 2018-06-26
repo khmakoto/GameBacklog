@@ -1,0 +1,60 @@
+/**********************************
+ * Alert design.                  *
+ **********************************/
+.alert {
+    align-items: center;
+    background-color: #91bed1;
+    border: solid 2px #37474F;
+    border-radius: 60px;
+    box-sizing: border-box;
+    color: black;
+    display: none;
+    flex-flow: row wrap;
+    font-size: 20px;
+    height: 0px;
+    justify-content: center;
+    left: calc(50% - 150px);
+    left: -webkit-calc(50% - 150px);
+    position: fixed;
+    top: calc(50% - 150px);
+    top: -webkit-calc(50% - 150px);
+    width: 300px;
+
+    transition: all 1s;
+    -webkit-transition: all 1s;
+}
+
+.alert > div {
+    display: none;
+}
+
+.alertBackground {
+    background-color: white;
+    display: none;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    opacity: 0.3;
+}
+
+.lineBreak {
+    height: 5px;
+    width: 100%;
+}
+
+.alertButton {
+    background-color: #00ffc8;
+    border: 0px;
+    border-radius: 20px;
+    font-family: 'Cagliostro';
+    font-size: 16px;
+    padding: 5px 10px 5px 20px;
+    text-align: center;
+}
+
+.alertButton:hover {
+    background-color: #00b991;
+    cursor: pointer;
+}
