@@ -1,0 +1,163 @@
+/**********************************
+ * Contents section.              *
+ **********************************/
+#contents {
+    background-color: #f5f5f5;
+    height: auto;
+    min-height: 100%;
+    padding: 60px 0 100px 0; 
+}
+
+/**********************************
+ * Search bar section.            *
+ **********************************/
+#searchBarSection {
+    background-color: white;
+    height: 80px;
+    margin: 0 12.5% 50px 12.5%;
+    padding: 15px 10px;
+}
+
+#searchBar {
+    border: none;
+    font-family: 'Cagliostro';
+    font-size: 20px;
+    height: 50px;
+    margin: 0;
+    outline: none;
+    padding-left: 10px;
+    width: 95%;
+}
+
+#searchButton {
+    float: left;
+    height: 50px;
+    margin: 0;
+    padding: 3px 0 0 0px;
+    width: 50px;
+}
+
+#searchButton > i {
+    border-radius: 25px;
+    padding: 10px;
+}
+
+#searchButton > i:hover {
+    background-color: #cecece;
+    cursor: pointer;
+}
+
+/**********************************
+ * Stats bar section.             *
+ **********************************/
+#statsSection {
+    background-color: white;
+    height: 500px;
+    margin: 0 12.5% 0px 12.5%;
+    padding: 15px 10px;
+}
+
+.statsItem {
+    margin: 0 5%;
+    width: 90%;
+}
+
+#statsTitle {
+    border-bottom: solid 2px black;
+    font-size: 20px;
+    margin: 10px 5%;
+    padding: 10px 0;
+    text-align: center;
+}
+
+#platformSection {
+    border-bottom: solid 2px black;
+    float: left;
+    height: auto;
+    padding-bottom: 5px;
+}
+
+.platform {
+    border-bottom: solid 2px white;
+    float: left;
+    font-size: 16px;
+    margin: 10px 0;
+    text-align: center;
+    width: 16.667%;
+}
+
+.platform.active {
+    border-bottom: solid 2px #4db6ac;
+}
+
+.platform:hover {
+    border-bottom: solid 2px #4db6ac;
+    cursor: pointer;
+}
+
+#totalGames {
+    background-color: #acec00;
+}
+
+#completedGames {
+    background-color: #00bbd6;
+}
+
+.stat {
+    border: 0px;
+    border-radius: 5px;
+    color: black;
+    float: left;
+    font-size: 14px;
+    margin: 60px 0 0 6.25%;
+    padding: 50px 5px;
+    text-align: center;
+    width: 25%;
+}
+
+.statNum {
+    display: block;
+    font-size: 40px;
+}
+
+/**********************************
+ * Percentage donut chart.        *
+ **********************************/
+#percentage {
+    float: left;
+    margin: 60px 0 0 6.25%;
+}
+
+svg {
+    margin: -100px 0 0 5px;
+}
+
+.circle_animation {
+    stroke-dasharray: 0 100;
+    stroke-dashoffset: 25;
+
+    animation: donut 1s ease-out forwards;
+    -webkit-animation: donut 1s ease-out forwards;
+}
+
+@keyframes donut {
+    to {
+        stroke-dasharray: 10 90;
+    }
+}
+
+@-webkit-keyframes donut {
+    to {
+        stroke-dasharray: 10 90;
+    }
+}
+
+.chartText {
+    font-size: 10px;
+    text-anchor: middle;
+
+    -moz-transform: translateY(0.4em);
+    -ms-transform: translateY(0.4em);
+    -webkit-transform: translateY(0.4em);
+    transform: translateY(0.4em);
+}

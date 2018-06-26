@@ -1,7 +1,7 @@
 <DOCTYPE !HTML>
 <html>
 	<head>
-		<title>CollabStory</title>
+		<title>Game Backlog</title>
 
 		<link href="https://fonts.googleapis.com/css?family=Cagliostro" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Homemade Apple" rel="stylesheet">
@@ -21,26 +21,55 @@
 	<body>
 		<div>
 			<ul id="navbar">
-				<li class="menuItem">Welcome to CollabStory!</li>
+				<li class="menuItem col-1 col-m-1"><i class="material-icons md-30">home</i></li>
+				<li class="menuItem col-10 col-m-10">Welcome to your Game Backlog</li>
+				<li class="menuItem col-1 col-m-1"><i class="material-icons md-30">add</i></li>
 			</ul>
 		</div>
 
-		<div id="navfooter">
-			<p>Created by <a href="mailto:humberto_makoto@utexas.edu">Makoto Morimoto</a></p>
-			<p>University of Texas at Austin</p>
+		<div id="contents" class="col-12 col-m-12">
+			<div id="searchBarSection" class="col-9 col-m-9">
+				<div id="searchButton"><i class="material-icons md-24">search</i></div>
+				<input id="searchBar" type="text" placeholder="Search for a game..." />
+			</div>
+
+			<div id="statsSection" class="col-9 col-m-9">
+				<div id="statsTitle" class="statsItem">Your Stats</div>
+
+				<div id="platformSection" class="statsItem">
+					<div class="platform active">Overall</div>
+					<div class="platform">PlayStation</div>
+					<div class="platform">PlayStation 2</div>
+					<div class="platform">PlayStation 3</div>
+					<div class="platform">PlayStation 4</div>
+					<div class="platform">PSP</div>
+					<div class="platform">Gameboy Advance</div>
+					<div class="platform">Nintendo DS</div>
+					<div class="platform">Nintendo 3DS</div>
+					<div class="platform">Nintendo Switch</div>
+					<div class="platform">Xbox One</div>
+					<div class="platform">PC</div>
+					<div class="endPlatform"></div>
+				</div>
+
+				<div id="stats" class="statsItem">
+					<div id="totalGames" class="stat"><label class="statNum">100</label> total games</div>
+					<div id="completedGames" class="stat"><label class="statNum">10</label> games completed</div>
+					<div id="percentage">
+						<svg width="80%" height="80%" viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg">
+							<circle r="15.91549430918954" cy="21" cx="21" stroke-width="3" stroke="#eed9f2" fill="none"/>
+							<circle id="circle" class="circle_animation" r="15.91549430918954" cy="21" cx="21" stroke-width="3" stroke="#ba65c9" fill="none"/>
+
+							<g>
+								<text x="50%" y="50%" class="chartText">10%</text>
+							</g>
+						</svg>
+					</div>
+				</div>	
+			</div>
 		</div>
 
-		<!-- Alert section -->
-		<div class="alertBackground"></div>
-        <div id="signInAlert" class="alert">
-            <div class="lineBreak"></div>
-            <div>Welcome KHMakoto!</div>
-            <div class="lineBreak"></div>
-            <div id="signInAlertButton" class="alertButton">
-                <i class="material-icons md-30">done</i>
-            </div>
-            <div class="lineBreak"></div>
-		</div>
-		
+		<div id="navfooter">
+		</div>		
 	</body>
 </html>
