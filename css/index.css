@@ -79,6 +79,73 @@
     width: 110%;
 }
 
+.suggestionImageBlock {
+    background-color: #848c92;
+    float: left;
+    height: 80px;
+    text-align: center;
+    width: 10%;
+}
+
+.suggestionImage {
+    max-height: 80px;
+    max-width: 95%;
+}
+
+.suggestionName {
+    float: left;
+    height: 50px;
+    padding: 15px 0 0 15px;
+    width: 90%;
+}
+
+.suggestionCompleted {
+    float: left;
+    font-size: 14px;
+    height: 30px;
+    padding: 0px 0 0 15px;
+    width: 90%;
+}
+
+#noMatches {
+    background-color: #b1bcc4;
+    height: 50px;
+    margin-left: -2.5%;
+    padding-top: 10px;
+    text-align: center;
+    width: 105%;
+}
+
+.viewMore {
+    background-color: #b1bcc4;
+    height: 50px;
+    margin-left: -2.5%;
+    padding-top: 10px;
+    text-align: center;
+    width: 105%;
+}
+
+.viewMore.selected {
+    background-color: #8db0c9;
+    font-size: 25px;
+    height: 60px;
+    margin-left: -5%;
+    padding-top: 15px;
+    text-decoration: underline;
+    width: 110%;
+}
+
+.viewMore:hover {
+    background-color: #8db0c9;
+    cursor: pointer;
+    font-size: 24px;
+    height: 60px;
+    padding-top: 15px;
+    margin-left: -5%;
+    text-decoration: underline;
+    width: 110%;
+}
+
 /**********************************
  * Stats section.             *
  **********************************/
