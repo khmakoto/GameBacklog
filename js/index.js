@@ -12,6 +12,32 @@ $(document).ready(function() {
     // Variable that determines selected search suggestion.
     var selectedSuggestion = 0;
 
+    // Function to retrieve and show suggestions.
+    function showSuggestions() {
+        $("#searchSuggestions").remove();
+
+        var offset = $("#searchBarSection").offset();
+
+        var searchSuggestions = "<div id=\"searchSuggestions\" style=\"left: " + offset.left +  "px; top: " + (offset.top + 80) + "px;\">";
+        
+        // TODO: Replace with actual info
+        searchSuggestions += "<div id=\"suggestion1\" class=\"suggestion\">Suggestion 1</div>";
+        searchSuggestions += "<div id=\"suggestion2\" class=\"suggestion\">Suggestion 2</div>";
+        searchSuggestions += "<div id=\"suggestion3\" class=\"suggestion\">Suggestion 3</div>";
+
+        searchSuggestions += "</div>";
+
+        $("#contents").append(searchSuggestions);
+
+        // Function to remove selected class on hover.
+        $(".suggestion").hover(function() {
+            $(".suggestion").each(function() {
+                $(this).removeClass("selected");
+                selectedSuggestion = 0;
+            })
+        });
+    }
+
     // Function to display suggestions when typing on search bar.
     $("#searchBar").keyup(function(evt) {
         // If search bar is not empty.
@@ -39,28 +65,7 @@ $(document).ready(function() {
 
             // If a relevant key is typed, show suggestions.
             else if (evt.which != 37 && evt.which != 39) {
-                $("#searchSuggestions").remove();
-
-                var offset = $("#searchBarSection").offset();
-
-                var searchSuggestions = "<div id=\"searchSuggestions\" style=\"left: " + offset.left +  "px; top: " + (offset.top + 80) + "px;\">";
-                
-                // TODO: Replace with actual info
-                searchSuggestions += "<div id=\"suggestion1\" class=\"suggestion\">Suggestion 1</div>";
-                searchSuggestions += "<div id=\"suggestion2\" class=\"suggestion\">Suggestion 2</div>";
-                searchSuggestions += "<div id=\"suggestion3\" class=\"suggestion\">Suggestion 3</div>";
-
-                searchSuggestions += "</div>";
-
-                $("#contents").append(searchSuggestions);
-
-                // Function to remove selected class on hover.
-                $(".suggestion").hover(function() {
-                    $(".suggestion").each(function() {
-                        $(this).removeClass("selected");
-                        selectedSuggestion = 0;
-                    })
-                });
+                showSuggestions();
             }
         }
 
@@ -74,6 +79,19 @@ $(document).ready(function() {
     $("#searchBar").keydown(function(evt) {
         if (evt.which == 38 || evt.which == 40) {
             evt.preventDefault();
+        }
+    });
+
+    // Function to remove suggestions when focusing out of search bar.
+    $("#searchBar").focusout(function(evt) {
+        $("#searchSuggestions").remove();
+        selectedSuggestion = 0;
+    });
+
+    // Function to include suggestions when focusing in search bar if it is not empty.
+    $("#searchBar").focusin(function(evt) {
+        if ($("#searchBar").val() != "") {
+            showSuggestions();
         }
     });
 });
