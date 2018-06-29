@@ -7,7 +7,7 @@ $(document).ready(function() {
     function showSuggestions() {
         $("#searchSuggestions").remove();
         selectedSuggestion = 0;
-        numSuggestions = 3;
+        numSuggestions = 4;
 
         var offset = $("#searchBarSection").offset();
 
@@ -162,7 +162,7 @@ $(document).ready(function() {
         if (total == 0) {
             $("#totalGames > label").html("0");
             $("#completedGames > label").html("0");
-            $("#chartText").html("0");
+            
             percentage = 0;
         }
         // Else, update with proper numbers.
@@ -171,8 +171,9 @@ $(document).ready(function() {
             $("#completedGames > label").html(completed);
 
             percentage = Math.round(completed * 100 / total);
-            $("#chartText").html(percentage);
         }
+
+        $("#chartText").html(percentage + "%");
 
         $.keyframe.define([{
             name: "donut" + animationCount,
