@@ -1,14 +1,4 @@
 $(document).ready(function() {
-    // Function to change stats when clicking on another platform.
-    $(".platform").on("click", function() {
-        $(".platform").each(function() {
-            $(this).removeClass("active");
-        });
-
-        $(this).addClass("active");
-    });
-
-
     // Variable that determines selected search suggestion.
     var selectedSuggestion = 0;
     var numSuggestions = 3;
@@ -155,6 +145,105 @@ $(document).ready(function() {
     $("#searchBar").focusin(function(evt) {
         if ($("#searchBar").val() != "" && $("#searchBar").val() !== " ") {
             showSuggestions();
+        }
+    });
+
+    // Variable to keep track of new animations.
+    var animationCount = 0;
+
+    // Variable to keep track of previous stroke dasharray.
+    var previousStroke = "0 100";
+
+    // Function to update stats section with new information.
+    function updateStatsSection(total, completed) {
+        var percentage;
+
+        // If total is zero, then update everything with zero.
+        if (total == 0) {
+            $("#totalGames > label").html("0");
+            $("#completedGames > label").html("0");
+            $("#chartText").html("0");
+            percentage = 0;
+        }
+        // Else, update with proper numbers.
+        else {
+            $("#totalGames > label").html(total);
+            $("#completedGames > label").html(completed);
+
+            percentage = Math.round(completed * 100 / total);
+            $("#chartText").html(percentage);
+        }
+
+        $.keyframe.define([{
+            name: "donut" + animationCount,
+            from: {
+                "stroke-dasharray": previousStroke
+            },
+            to: {
+                "stroke-dasharray": percentage + " " + (100 - percentage)
+            }
+        }]);
+
+        $("#circle").playKeyframe("donut" + animationCount + " 1s ease-out forwards");
+        animationCount += 1;
+        previousStroke = percentage + " " + (100 - percentage);
+    }
+
+    // Function to get overall stats.
+    function getOverallStats() {
+        $.ajax({
+            type: "POST",
+            url: "controller/indexController.php",
+            dataType: "json",
+            data: {"action": "OVERALL_STATS"},
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            success: function(jsonData) {
+                updateStatsSection(jsonData.total, jsonData.completed);
+            },
+            error: function(errorMsg) {
+                console.log(errorMsg.statusText);
+            }
+        });
+    }
+
+    // At the beginning populate stats section with overall stats.
+    getOverallStats();
+
+    // Function to get specific platform stats.
+    function getPlatformStats(selection) {
+        $.ajax({
+            type: "POST",
+            url: "controller/indexController.php",
+            dataType: "json",
+            data: {"action": "PLATFORM_STATS", "platform": selection},
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            success: function(jsonData) {
+                updateStatsSection(jsonData.total, jsonData.completed);
+            },
+            error: function(errorMsg) {
+                console.log(errorMsg.statusText);
+            }
+        });
+    }
+
+    // Function to change stats when clicking on another platform.
+    $(".platform").on("click", function() {
+        $(".platform").each(function() {
+            $(this).removeClass("active");
+        });
+
+        $(this).addClass("active");
+
+        var selection = $(this).html();
+        selection = selection.replace(" ", "");
+        
+        // If selection is overall, get stats from all platforms.
+        if (selection == "Overall") {
+            getOverallStats();
+        }
+        // Else, get stats from specific platform.
+        else {
+            getPlatformStats(selection);
         }
     });
 });

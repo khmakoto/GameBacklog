@@ -12,7 +12,8 @@
 		<link rel="stylesheet" type="text/css" href="css/navbar.css">
 		<link rel="stylesheet" type="text/css" href="css/index.css">
 		
-		<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery.keyframes.min.js"></script>
 		<script type="text/javascript" src="js/alert.js"></script>
 		<script type="text/javascript" src="js/navbar.js"></script>
 		<script type="text/javascript" src="js/index.js"></script>
@@ -57,16 +58,16 @@
 					<div id="totalGames" class="stat"><label class="statNum">100</label> total games</div>
 					<div id="completedGames" class="stat"><label class="statNum">10</label> games completed</div>
 					<div id="percentage">
-						<svg width="80%" height="70%" viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg">
+						<svg id="svg" width="80%" height="70%" viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg">
 							<circle r="15.91549430918954" cy="21" cx="21" stroke-width="3" stroke="#eed9f2" fill="none"/>
 							<circle id="circle" class="circle_animation" r="15.91549430918954" cy="21" cx="21" stroke-width="3" stroke="#ba65c9" fill="none"/>
 
 							<g>
-								<text x="50%" y="50%" class="chartText">10%</text>
+								<text x="50%" y="50%" id="chartText">10%</text>
 							</g>
 						</svg>
 					</div>
-				</div>	
+				</div>
 			</div>
 		</div>
 

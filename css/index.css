@@ -234,24 +234,9 @@ svg {
 .circle_animation {
     stroke-dasharray: 0 100;
     stroke-dashoffset: 25;
-
-    animation: donut 1s ease-out forwards;
-    -webkit-animation: donut 1s ease-out forwards;
 }
 
-@keyframes donut {
-    to {
-        stroke-dasharray: 10 90;
-    }
-}
-
-@-webkit-keyframes donut {
-    to {
-        stroke-dasharray: 10 90;
-    }
-}
-
-.chartText {
+#chartText {
     font-size: 10px;
     text-anchor: middle;
 
