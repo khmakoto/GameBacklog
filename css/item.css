@@ -1,0 +1,134 @@
+/**********************************
+ * Contents section.              *
+ **********************************/
+ #contents {
+    background-color: #dddddd;
+    height: auto;
+    min-height: 100%;
+    padding: 60px 0 100px 0; 
+}
+
+ #itemSection {
+    background-color: white;
+    height: 80%;
+    margin: 0 12.5% 0 12.5%;
+    padding: 15px 25px;
+}
+
+/**********************************
+ * Item image section.            *
+ **********************************/
+#itemImageSection {
+    float: left;
+    height: 100%;
+    text-align: center;
+    white-space: nowrap;
+    width: 40%;
+}
+
+.helper {
+    display: inline-block;
+    height: 100%;
+    margin-left: -6px;
+    vertical-align: middle;
+}
+
+#itemImage {
+    max-height: 100%;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+/**********************************
+ * Item information section.      *
+ **********************************/
+#itemInfoSection {
+    float: left;
+    height: 85%;
+    padding: 0 10px;
+    width: 60%;
+}
+
+.itemInfoTable {
+    border-collapse: collapse;
+    border-top: solid 1px black;
+    height: 80%;
+    margin-top: 12%;
+    width: 100%;
+}
+
+td {
+    border-bottom: solid 1px black;
+}
+
+.label {
+    font-family: 'Cagliostro';
+    font-size: 20px;
+    padding-right: 15px;
+    text-align: right;
+    width: 30%;
+}
+
+.inputField {
+    height: 20%;
+    padding: 0 5px;
+    width: 70%;
+}
+
+.input {
+    border: none;
+    font-family: 'Cagliostro';
+    font-size: 20px;
+    height: 50px;
+    margin: 0;
+    outline: none;
+    padding-left: 10px;
+    width: 98%;
+}
+
+.platformField {
+    height: 20%;
+    padding: 5px;
+    text-align: center;
+    width: 11.67%;
+}
+
+.platform {
+    max-width: 95%;
+    max-height: 95%;
+    opacity: 0.4;
+}
+
+.platform.active {
+    opacity: 1;
+}
+
+/**********************************
+ * Edit information section.      *
+ **********************************/
+#editSection {
+    float: left;
+    height: 20%;
+    text-align: center;
+    width: 60%;
+}
+
+#editButton {
+    background-color: #94d8ed;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Cagliostro';
+    font-size: 20px;
+    height: 50px;
+    padding: 5px;
+	width: 200px;
+}
+
+#editButton:hover {
+    background-color: #40c5ee;
+    border-radius: 13px;
+    height: 55px;
+    padding: 7px;
+    width: 210px;
+}

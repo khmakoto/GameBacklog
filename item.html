@@ -1,0 +1,88 @@
+<DOCTYPE !HTML>
+    <html>
+        <head>
+            <title>Game Backlog</title>
+    
+            <link href="https://fonts.googleapis.com/css?family=Cagliostro" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Homemade Apple" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <link rel="stylesheet" type="text/css" href="css/general.css">
+            <link rel="stylesheet" type="text/css" href="css/alert.css">
+            <link rel="stylesheet" type="text/css" href="css/footer.css">
+            <link rel="stylesheet" type="text/css" href="css/navbar.css">
+            <link rel="stylesheet" type="text/css" href="css/item.css">
+            
+            <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+            <script type="text/javascript" src="js/jquery.keyframes.min.js"></script>
+            <script type="text/javascript" src="js/alert.js"></script>
+            <script type="text/javascript" src="js/navbar.js"></script>
+            <script type="text/javascript" src="js/item.js"></script>
+    
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        </head>
+        <body>
+            <div>
+                <ul id="navbar">
+                    <li id="homeButton" class="menuItem col-1 col-m-1"><i class="material-icons md-30">home</i></li>
+                    <li class="menuItem col-10 col-m-10">Welcome to your Game Backlog</li>
+                    <li id="newButton" class="menuItem col-1 col-m-1"><i class="material-icons md-30">add</i></li>
+                </ul>
+            </div>
+    
+            <div id="contents" class="col-12 col-m-12">
+                <div id="itemSection" class="col-9 col-m-9">
+                    <div id="itemImageSection">
+                        <span class="helper"></span>
+                        <img id="itemImage" src="images/A Series of Unfortunate Events.jpg" class="suggestionImage" />
+                    </div>
+                    <div id="itemInfoSection">
+                        <table class="itemInfoTable">
+                            <tr>
+                                <td class="label">Name:</td>
+                                <td class="inputField" colspan="6">
+                                    <input class="input" type="text" value="Name" disabled="true" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label">State:</td>
+                                <td class="inputField" colspan="6">
+                                    <input class="input" type="text" value="State" disabled="true" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label" rowspan="3">Platforms:</td>
+                                <td class="platformField"><img id="PlayStation" class="platform" src="images/PlayStation.png"/></td>
+                                <td class="platformField"><img id="PlayStation2" class="platform" src="images/PlayStation2.jpg"/></td>
+                                <td class="platformField"><img id="PlayStation3" class="platform" src="images/PlayStation3.jpg"/></td>
+                                <td class="platformField"><img id="PlayStation4" class="platform" src="images/PlayStation4.png"/></td>
+                                <td class="platformField"><img id="PSP" class="platform" src="images/PSP.png"/></td>
+                                <td class="platformField"><img id="GameboyAdvance" class="platform" src="images/GameboyAdvance.jpg"/></td>
+                            </tr>
+                            <tr>
+                                <td class="platformField"><img id="NintendoDS" class="platform" src="images/NintendoDS.png"/></td>
+                                <td class="platformField"><img id="Nintendo3DS" class="platform" src="images/Nintendo3DS.png"/></td>
+                                <td class="platformField"><img id="NintendoSwitch" class="platform" src="images/NintendoSwitch.jpg"/></td>
+                                <td class="platformField"><img id="XboxOne" class="platform" src="images/XboxOne.png"/></td>
+                                <td class="platformField"><img id="Blizzard" class="platform" src="images/Blizzard.jpg"/></td>
+                                <td class="platformField"><img id="GOG" class="platform" src="images/GOG.png"/></td>
+                            </tr>
+                            <tr>
+                                <td class="platformField"><img id="Epic" class="platform" src="images/Epic.png"/></td>
+                                <td class="platformField"><img id="Origin" class="platform" src="images/Origin.png"/></td>
+                                <td class="platformField"><img id="Steam" class="platform" src="images/Steam.jpg"/></td>
+                                <td class="platformField"><img id="Twitch" class="platform" src="images/Twitch.jpg"/></td>
+                                <td class="platformField"><img id="UPlay" class="platform" src="images/UPlay.jpeg"/></td>
+                                <td class="platformField"><img id="Microsoft" class="platform" src="images/Microsoft.jpg"/></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="editSection">
+                        <input id="editButton" type="button" value="Edit Information"/>
+                    </div>
+                </div>
+            </div>
+    
+            <div id="navfooter">
+            </div>		
+        </body>
+    </html>

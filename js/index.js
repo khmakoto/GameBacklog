@@ -78,6 +78,14 @@ $(document).ready(function() {
                 if (count < numSuggestions) {
                     numSuggestions = count;
                 }
+
+                // Function to redirect to item or view more page on click.
+                $(".suggestion").on("mousedown", function() {
+                    location.href = "item.html?id=" + $(this).attr("title");
+                });
+                $(".viewMore").on("mousedown", function() {
+                    location.href = "index.html?id=viewMore";
+                });
             },
             error: function(errorMsg){
                 console.log(errorMsg.statusText);
