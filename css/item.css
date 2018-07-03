@@ -76,14 +76,19 @@ td {
 }
 
 .input {
-    border: none;
+    border: solid 1px lightgray;
     font-family: 'Cagliostro';
     font-size: 20px;
     height: 50px;
     margin: 0;
     outline: none;
-    padding-left: 10px;
+    padding-left: 9px;
     width: 98%;
+}
+
+.input:disabled {
+    padding-left: 10px;
+    border: none;
 }
 
 .platformField {
@@ -114,21 +119,37 @@ td {
 }
 
 #editButton {
-    background-color: #94d8ed;
     border: none;
     border-radius: 10px;
     cursor: pointer;
     font-family: 'Cagliostro';
     font-size: 20px;
     height: 50px;
+    outline: none;
     padding: 5px;
 	width: 200px;
 }
 
 #editButton:hover {
-    background-color: #40c5ee;
     border-radius: 13px;
     height: 55px;
+    margin-top: -3px;
     padding: 7px;
     width: 210px;
+}
+
+.habilitateEditing {
+    background-color: #94d8ed;
+}
+
+.habilitateEditing:hover {
+    background-color: #40c5ee;
+}
+
+.saveInformation {
+    background-color: #15FF46;
+}
+
+.saveInformation:hover {
+    background-color: #00e732;
 }
