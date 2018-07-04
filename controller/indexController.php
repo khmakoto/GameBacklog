@@ -22,7 +22,7 @@
 	function searchGames() {
 		$searchTerm = $_POST["searchTerm"];
 
-		# Search searchTerm in User table in database
+		# Search searchTerm in Games table in database
 		$result = searchInGames($searchTerm);
 
 		if ($result["status"] == "COMPLETE") {

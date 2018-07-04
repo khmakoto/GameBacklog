@@ -81,7 +81,7 @@ $(document).ready(function() {
 
                 // Function to redirect to item or view more page on click.
                 $(".suggestion").on("mousedown", function() {
-                    location.href = "item.html?id=" + $(this).attr("title");
+                    location.href = "item.html?name=" + $(this).attr("title");
                 });
                 $(".viewMore").on("mousedown", function() {
                     location.href = "index.html?id=viewMore";

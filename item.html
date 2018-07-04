@@ -33,20 +33,24 @@
                 <div id="itemSection" class="col-9 col-m-9">
                     <div id="itemImageSection">
                         <span class="helper"></span>
-                        <img id="itemImage" src="images/A Series of Unfortunate Events.jpg" class="suggestionImage" />
+                        <img id="itemImage" class="suggestionImage" />
                     </div>
                     <div id="itemInfoSection">
                         <table class="itemInfoTable">
                             <tr>
                                 <td class="label">Name:</td>
                                 <td class="inputField" colspan="6">
-                                    <input class="input" type="text" value="Name" disabled="true" />
+                                    <input id="name" class="input" type="text" value="" disabled="true" />
                                 </td>
                             </tr>
                             <tr>
                                 <td class="label">State:</td>
                                 <td class="inputField" colspan="6">
-                                    <input class="input" type="text" value="State" disabled="true" />
+                                    <select id="state" class="input" disabled="true">
+                                        <option value="0">Not completed</option>
+                                        <option value="1">Completed</option>
+                                        <option value="2">Mainly multiplayer</option>
+                                    </select>
                                 </td>
                             </tr>
                             <tr>

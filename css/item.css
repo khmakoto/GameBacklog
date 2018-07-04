@@ -87,6 +87,8 @@ td {
 }
 
 .input:disabled {
+    background-color: #ebebe4;
+    color: #545454;
     padding-left: 10px;
     border: none;
 }
