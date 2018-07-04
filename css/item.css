@@ -140,11 +140,11 @@ td {
     width: 210px;
 }
 
-.habilitateEditing {
+.enableEditing {
     background-color: #94d8ed;
 }
 
-.habilitateEditing:hover {
+.enableEditing:hover {
     background-color: #40c5ee;
 }
 
