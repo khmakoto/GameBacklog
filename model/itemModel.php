@@ -42,4 +42,36 @@
         }
 	}
 
+	# Update to change game information
+    function updateGameInfo($prevName, $name, $state, $PlayStation, $PlayStation2, $PlayStation3, $PlayStation4, $PSP,
+							$GameboyAdvance, $NintendoDS, $Nintendo3DS, $NintendoSwitch, $XboxOne, $Blizzard, $GOG, $Epic, $Origin,
+							$Steam, $Twitch, $UPlay, $Microsoft) {
+    	# Open and validate the Database connection
+    	$conn = connect();
+
+        if ($conn != null) {
+        	$sql = "UPDATE Games SET Name = '$name', State = '$state', PlayStation = '$PlayStation', PlayStation2 = '$PlayStation2',
+					PlayStation3 = '$PlayStation3', PlayStation4 = '$PlayStation4', PSP = '$PSP', GameboyAdvance = '$GameboyAdvance',
+					NintendoDS = '$NintendoDS', Nintendo3DS = '$Nintendo3DS', NintendoSwitch = '$NintendoSwitch',
+					XboxOne = '$XboxOne', Blizzard = '$Blizzard', GOG = '$GOG', Epic = '$Epic', Origin = '$Origin',
+					Steam = '$Steam', Twitch = '$Twitch', UPlay = '$UPlay', Microsoft = '$Microsoft' 
+				    WHERE Name = '$prevName'";	
+			if (mysqli_query($conn, $sql)) 
+	    	{
+	    		$conn->close();
+			    return array("status" => "COMPLETE");
+			} 
+			else 
+			{
+				$conn->close();
+				return errors(480);
+			}
+        }
+        else {
+        	# Connection to Database was not successful
+        	$conn->close();
+        	return errors(400);
+        }
+    }
+
 ?>

@@ -12,7 +12,9 @@
 			case 440:	$header .= "440 There was an error retrieving stats, try again";
                         break;
             case 460:   $header .= "460 Error while retrieving game information from Database";
-                        break;
+						break;
+			case 480:   $header .= "480 Error while updating game information in Database";
+						break;
 			default:	$header .= "404 Request Not Found";
 		}
 

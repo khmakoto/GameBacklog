@@ -75,8 +75,53 @@ $(document).ready(function() {
         }
     });
 
+    // Variable that tracks previous name when editing info.
+    var prevName = "";
+
     // Variable that tracks if button should enable editing or save information.
     var editing = false;
+
+    // Function to update information.
+    function updateInformation() {
+        var updatedData =
+                {"action": "UPDATE", "prevName": prevName, "name": $("#name").val(), "state": $("#state").val(),
+                "PlayStation": ($("#PlayStation").hasClass("active") ? 1 : 0),
+                "PlayStation2": ($("#PlayStation2").hasClass("active") ? 1 : 0),
+                "PlayStation3": ($("#PlayStation3").hasClass("active") ? 1 : 0),
+                "PlayStation4": ($("#PlayStation4").hasClass("active") ? 1 : 0),
+                "PSP": ($("#PSP").hasClass("active") ? 1 : 0),
+                "GameboyAdvance": ($("#GameboyAdvance").hasClass("active") ? 1 : 0),
+                "NintendoDS": ($("#NintendoDS").hasClass("active") ? 1 : 0),
+                "Nintendo3DS": ($("#Nintendo3DS").hasClass("active") ? 1 : 0),
+                "NintendoSwitch": ($("#NintendoSwitch").hasClass("active") ? 1 : 0),
+                "XboxOne": ($("#XboxOne").hasClass("active") ? 1 : 0),
+                "Blizzard": ($("#Blizzard").hasClass("active") ? 1 : 0),
+                "GOG": ($("#GOG").hasClass("active") ? 1 : 0),
+                "Epic": ($("#Epic").hasClass("active") ? 1 : 0),
+                "Origin": ($("#Origin").hasClass("active") ? 1 : 0),
+                "Steam": ($("#Steam").hasClass("active") ? 1 : 0),
+                "Twitch": ($("#Twitch").hasClass("active") ? 1 : 0),
+                "UPlay": ($("#UPlay").hasClass("active") ? 1 : 0),
+                "Microsoft": ($("#Microsoft").hasClass("active") ? 1 : 0)};
+        console.log(updatedData);
+
+        // Ajax call to upload new information to server.
+        $.ajax({
+            type: "POST",
+            url: "controller/itemController.php",
+            dataType: "json",
+            data: updatedData,
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            success: function(jsonData) {
+                alert("Information updated successfully.");
+            },
+            error: function(errorMsg) {
+                console.log(errorMsg.statusText);
+                alert("Something wrong happened while uploading your info. Reloading page.");
+                location.reload();
+            }
+        });
+    }
 
     // Function to edit information.
     $("#editButton").on("click", function() {
@@ -94,11 +139,14 @@ $(document).ready(function() {
             $("#editButton").removeClass("saveInformation");
             $("#editButton").addClass("enableEditing");
             $("#editButton").val("Edit Information");
-            alert("Info saved.");
+
+            updateInformation();
         }
         // If not, enable editing.
         else {
             editing = true;
+
+            prevName = $("#name").val();
 
             $(".input").each(function() {
                 $(this).prop("disabled", false);
