@@ -180,20 +180,23 @@ $(document).ready(function() {
 
     // Function to search for keyword in viewMore.html when clicking on search button.
     $("#searchButton").on("mousedown", function() {
-        // If there is at least one match, go to viewMore.html.
-        $.ajax({
-            type: "POST",
-            url: "controller/indexController.php",
-            dataType: "json",
-            data: {"action": "SEARCH", "searchTerm": $("#searchBar").val()},
-            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-            success: function(jsonData) {
-                location.href = "index.html?id=viewMore&name=" + $("#searchBar").val();
-            },
-            error: function(errorMsg) {
-                console.log(errorMsg.statusText);
-            }
-        });
+        // If the search bar is not empty.
+        if ($("#searchBar").val() != "") {
+            // If there is at least one match, go to viewMore.html.
+            $.ajax({
+                type: "POST",
+                url: "controller/indexController.php",
+                dataType: "json",
+                data: {"action": "SEARCH", "searchTerm": $("#searchBar").val()},
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                success: function(jsonData) {
+                    location.href = "index.html?id=viewMore&name=" + $("#searchBar").val();
+                },
+                error: function(errorMsg) {
+                    console.log(errorMsg.statusText);
+                }
+            });
+        }
     });
 
 
