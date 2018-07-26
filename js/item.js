@@ -72,6 +72,8 @@ $(document).ready(function() {
         },
         error: function(errorMsg) {
             console.log(errorMsg.statusText);
+            alert(errorMsg.statusText);
+            location.href = "index.html";
         }
     });
 
@@ -114,6 +116,7 @@ $(document).ready(function() {
             headers: {'Content-Type': 'application/x-www-form-urlencoded'},
             success: function(jsonData) {
                 alert("Information updated successfully.");
+                location.href = "item.html?name=" + $("#name").val();
             },
             error: function(errorMsg) {
                 console.log(errorMsg.statusText);
