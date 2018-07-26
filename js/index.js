@@ -1,11 +1,14 @@
 $(document).ready(function() {
+    /**********************************
+     * Search bar section.            *
+     **********************************/
+
     // Variable that determines selected search suggestion.
     var selectedSuggestion = 0;
     var numSuggestions = 3;
 
     // Function to retrieve and show suggestions.
     function showSuggestions() {
-        $("#searchSuggestions").remove();
         selectedSuggestion = 0;
         numSuggestions = 4;
 
@@ -49,6 +52,7 @@ $(document).ready(function() {
                 searchSuggestions += "<div id=\"suggestion" + count + "\" class=\"viewMore\">View more...</div>";
                 searchSuggestions += "</div>";
 
+                $("#searchSuggestions").remove();
                 $("#contents").append(searchSuggestions);
 
                 // Function to remove selected class on hover.
@@ -84,7 +88,7 @@ $(document).ready(function() {
                     location.href = "item.html?name=" + $(this).attr("title");
                 });
                 $(".viewMore").on("mousedown", function() {
-                    location.href = "index.html?id=viewMore";
+                    location.href = "index.html?id=viewMore&name=" + $("#searchBar").val();
                 });
             },
             error: function(errorMsg){
@@ -93,6 +97,7 @@ $(document).ready(function() {
                 // If no matches were found, show message.
                 if (errorMsg.status == 420) {
                     searchSuggestions += "<div id=\"noMatches\">No match for search term</div></div>";
+                    $("#searchSuggestions").remove();
                     $("#contents").append(searchSuggestions);
                 }
             }
@@ -124,8 +129,8 @@ $(document).ready(function() {
                 $("#suggestion" + selectedSuggestion).addClass("selected");
             }
 
-            // If key is enter.
-            else if (evt.which == 13) {
+            // If key is enter and at least one match was found.
+            else if (evt.which == 13 && !(($("#noMatches").get(0)) instanceof Element)) {
                 // If a suggestion was selected, go to that suggestion item page.
                 var selected = "";
                 $(".suggestion").each(function() {
@@ -137,7 +142,7 @@ $(document).ready(function() {
 
                 // If not, go to view more page.
                 else {
-                    location.href = "index.html?id=viewMore";
+                    location.href = "index.html?id=viewMore&name=" + $("#searchBar").val();
                 }
             }
             
@@ -172,6 +177,29 @@ $(document).ready(function() {
             showSuggestions();
         }
     });
+
+    // Function to search for keyword in viewMore.html when clicking on search button.
+    $("#searchButton").on("mousedown", function() {
+        // If there is at least one match, go to viewMore.html.
+        $.ajax({
+            type: "POST",
+            url: "controller/indexController.php",
+            dataType: "json",
+            data: {"action": "SEARCH", "searchTerm": $("#searchBar").val()},
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            success: function(jsonData) {
+                location.href = "index.html?id=viewMore&name=" + $("#searchBar").val();
+            },
+            error: function(errorMsg) {
+                console.log(errorMsg.statusText);
+            }
+        });
+    });
+
+
+    /**********************************
+     * Stats section.                 *
+     **********************************/
 
     // Variable to keep track of new animations.
     var animationCount = 0;
