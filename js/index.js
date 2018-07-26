@@ -124,7 +124,24 @@ $(document).ready(function() {
                 $("#suggestion" + selectedSuggestion).addClass("selected");
             }
 
-            // If a relevant key is typed, show suggestions.
+            // If key is enter.
+            else if (evt.which == 13) {
+                // If a suggestion was selected, go to that suggestion item page.
+                var selected = "";
+                $(".suggestion").each(function() {
+                    selected = $(this).hasClass("selected") ? $(this).attr("title") : selected;
+                });
+                if (selected !== "") {
+                    location.href = "item.html?name=" + selected;
+                }
+
+                // If not, go to view more page.
+                else {
+                    location.href = "index.html?id=viewMore";
+                }
+            }
+            
+            // If another relevant key is typed, show suggestions.
             else if (evt.which != 37 && evt.which != 39) {
                 showSuggestions();
             }
