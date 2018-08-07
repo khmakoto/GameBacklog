@@ -24,6 +24,7 @@ $(document).ready(function() {
             data: {"action": "SEARCH", "searchTerm": $("#searchBar").val()},
             headers: {'Content-Type': 'application/x-www-form-urlencoded'},
             success: function(jsonData) {
+                console.log(jsonData);
                 var count = 1;
 
                 // Loop to append data to suggestions
@@ -88,7 +89,7 @@ $(document).ready(function() {
                     location.href = "item.html?name=" + $(this).attr("title");
                 });
                 $(".viewMore").on("mousedown", function() {
-                    location.href = "index.html?id=viewMore&name=" + $("#searchBar").val();
+                    location.href = "search.html?searchTerm=" + $("#searchBar").val();
                 });
             },
             error: function(errorMsg){
@@ -142,7 +143,7 @@ $(document).ready(function() {
 
                 // If not, go to view more page.
                 else {
-                    location.href = "index.html?id=viewMore&name=" + $("#searchBar").val();
+                    location.href = "search.html?searchTerm=" + $("#searchBar").val();
                 }
             }
             
@@ -178,11 +179,11 @@ $(document).ready(function() {
         }
     });
 
-    // Function to search for keyword in viewMore.html when clicking on search button.
+    // Function to search for keyword in search.html when clicking on search button.
     $("#searchButton").on("mousedown", function() {
         // If the search bar is not empty.
         if ($("#searchBar").val() != "") {
-            // If there is at least one match, go to viewMore.html.
+            // If there is at least one match, go to search.html.
             $.ajax({
                 type: "POST",
                 url: "controller/indexController.php",
@@ -190,7 +191,7 @@ $(document).ready(function() {
                 data: {"action": "SEARCH", "searchTerm": $("#searchBar").val()},
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 success: function(jsonData) {
-                    location.href = "index.html?id=viewMore&name=" + $("#searchBar").val();
+                    location.href = "search.html?searchTerm=" + $("#searchBar").val();
                 },
                 error: function(errorMsg) {
                     console.log(errorMsg.statusText);
