@@ -21,14 +21,21 @@
     height: 200px;
     margin-bottom: 30px;
     width: 100%;
+
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
 }
 
 .result:hover {
+    background-color: #8db0c9;
     cursor: pointer;
     height: 220px;
     margin: -10px 0 20px -2.5%;
     padding: 10px;
     width: 105%;
+
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
 }
 
 /**********************************
