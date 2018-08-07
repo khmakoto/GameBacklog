@@ -41,7 +41,9 @@ $(document).ready(function() {
             });
         },
         error: function(errorMsg) {
-            console.log(errorMsg);
+            console.log(errorMsg.statusText);
+            alert(errorMsg.statusText);
+            location.href = "index.html";
         }
     });
 });
