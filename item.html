@@ -1,93 +1,93 @@
 <DOCTYPE !HTML>
-    <html>
-        <head>
-            <title>Game Backlog</title>
-    
-            <link href="https://fonts.googleapis.com/css?family=Cagliostro" rel="stylesheet">
-            <link href="https://fonts.googleapis.com/css?family=Homemade Apple" rel="stylesheet">
-            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-            <link rel="stylesheet" type="text/css" href="css/general.css">
-            <link rel="stylesheet" type="text/css" href="css/alert.css">
-            <link rel="stylesheet" type="text/css" href="css/footer.css">
-            <link rel="stylesheet" type="text/css" href="css/navbar.css">
-            <link rel="stylesheet" type="text/css" href="css/item.css">
-            
-            <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-            <script type="text/javascript" src="js/jquery.keyframes.min.js"></script>
-            <script type="text/javascript" src="js/alert.js"></script>
-            <script type="text/javascript" src="js/navbar.js"></script>
-            <script type="text/javascript" src="js/item.js"></script>
-    
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        </head>
-        <body>
-            <div>
-                <ul id="navbar">
-                    <li id="homeButton" class="menuItem col-1 col-m-1"><i class="material-icons md-30">home</i></li>
-                    <li class="menuItem col-10 col-m-10">Welcome to your Game Backlog</li>
-                    <li id="newButton" class="menuItem col-1 col-m-1"><i class="material-icons md-30">add</i></li>
-                </ul>
-            </div>
-    
-            <div id="contents" class="col-12 col-m-12">
-                <div id="itemSection" class="col-9 col-m-9">
-                    <div id="itemImageSection">
-                        <span class="helper"></span>
-                        <img id="itemImage" class="suggestionImage" />
-                    </div>
-                    <div id="itemInfoSection">
-                        <table class="itemInfoTable">
-                            <tr>
-                                <td class="label">Name:</td>
-                                <td class="inputField" colspan="6">
-                                    <input id="name" class="input" type="text" value="" disabled="true" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label">State:</td>
-                                <td class="inputField" colspan="6">
-                                    <select id="state" class="input" disabled="true">
-                                        <option value="0">Not completed</option>
-                                        <option value="1">Completed</option>
-                                        <option value="2">Mainly multiplayer</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label" rowspan="3">Platforms:</td>
-                                <td class="platformField"><img id="PlayStation" class="platform" src="logos/PlayStation.png"/></td>
-                                <td class="platformField"><img id="PlayStation2" class="platform" src="logos/PlayStation2.jpg"/></td>
-                                <td class="platformField"><img id="PlayStation3" class="platform" src="logos/PlayStation3.jpg"/></td>
-                                <td class="platformField"><img id="PlayStation4" class="platform" src="logos/PlayStation4.png"/></td>
-                                <td class="platformField"><img id="PSP" class="platform" src="logos/PSP.png"/></td>
-                                <td class="platformField"><img id="GameboyAdvance" class="platform" src="logos/GameboyAdvance.jpg"/></td>
-                            </tr>
-                            <tr>
-                                <td class="platformField"><img id="NintendoDS" class="platform" src="logos/NintendoDS.png"/></td>
-                                <td class="platformField"><img id="Nintendo3DS" class="platform" src="logos/Nintendo3DS.png"/></td>
-                                <td class="platformField"><img id="NintendoSwitch" class="platform" src="logos/NintendoSwitch.jpg"/></td>
-                                <td class="platformField"><img id="XboxOne" class="platform" src="logos/XboxOne.png"/></td>
-                                <td class="platformField"><img id="Blizzard" class="platform" src="logos/Blizzard.jpg"/></td>
-                                <td class="platformField"><img id="GOG" class="platform" src="logos/GOG.png"/></td>
-                            </tr>
-                            <tr>
-                                <td class="platformField"><img id="Epic" class="platform" src="logos/Epic.png"/></td>
-                                <td class="platformField"><img id="Origin" class="platform" src="logos/Origin.png"/></td>
-                                <td class="platformField"><img id="Steam" class="platform" src="logos/Steam.jpg"/></td>
-                                <td class="platformField"><img id="Twitch" class="platform" src="logos/Twitch.jpg"/></td>
-                                <td class="platformField"><img id="UPlay" class="platform" src="logos/UPlay.jpeg"/></td>
-                                <td class="platformField"><img id="Microsoft" class="platform" src="logos/Microsoft.jpg"/></td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div id="editSection">
-                        <input id="editButton" class="enableEditing" type="button" value="Edit Information"/>
-                    </div>
+<html>
+    <head>
+        <title>Game Backlog</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Cagliostro" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Homemade Apple" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/general.css">
+        <link rel="stylesheet" type="text/css" href="css/alert.css">
+        <link rel="stylesheet" type="text/css" href="css/footer.css">
+        <link rel="stylesheet" type="text/css" href="css/navbar.css">
+        <link rel="stylesheet" type="text/css" href="css/item.css">
+        
+        <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery.keyframes.min.js"></script>
+        <script type="text/javascript" src="js/alert.js"></script>
+        <script type="text/javascript" src="js/navbar.js"></script>
+        <script type="text/javascript" src="js/item.js"></script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <ul id="navbar">
+                <li id="homeButton" class="menuItem col-1 col-m-1"><i class="material-icons md-30">home</i></li>
+                <li class="menuItem col-10 col-m-10">Welcome to your Game Backlog</li>
+                <li id="newButton" class="menuItem col-1 col-m-1"><i class="material-icons md-30">add</i></li>
+            </ul>
+        </div>
+
+        <div id="contents" class="col-12 col-m-12">
+            <div id="itemSection" class="col-9 col-m-9">
+                <div id="itemImageSection">
+                    <span class="helper"></span>
+                    <img id="itemImage" class="suggestionImage" />
+                </div>
+                <div id="itemInfoSection">
+                    <table class="itemInfoTable">
+                        <tr>
+                            <td class="label">Name:</td>
+                            <td class="inputField" colspan="6">
+                                <input id="name" class="input" type="text" value="" disabled="true" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label">State:</td>
+                            <td class="inputField" colspan="6">
+                                <select id="state" class="input" disabled="true">
+                                    <option value="0">Not completed</option>
+                                    <option value="1">Completed</option>
+                                    <option value="2">Mainly multiplayer</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label" rowspan="3">Platforms:</td>
+                            <td class="platformField"><img id="PlayStation" class="platform" src="logos/PlayStation.png"/></td>
+                            <td class="platformField"><img id="PlayStation2" class="platform" src="logos/PlayStation2.jpg"/></td>
+                            <td class="platformField"><img id="PlayStation3" class="platform" src="logos/PlayStation3.jpg"/></td>
+                            <td class="platformField"><img id="PlayStation4" class="platform" src="logos/PlayStation4.png"/></td>
+                            <td class="platformField"><img id="PSP" class="platform" src="logos/PSP.png"/></td>
+                            <td class="platformField"><img id="GameboyAdvance" class="platform" src="logos/GameboyAdvance.jpg"/></td>
+                        </tr>
+                        <tr>
+                            <td class="platformField"><img id="NintendoDS" class="platform" src="logos/NintendoDS.png"/></td>
+                            <td class="platformField"><img id="Nintendo3DS" class="platform" src="logos/Nintendo3DS.png"/></td>
+                            <td class="platformField"><img id="NintendoSwitch" class="platform" src="logos/NintendoSwitch.jpg"/></td>
+                            <td class="platformField"><img id="XboxOne" class="platform" src="logos/XboxOne.png"/></td>
+                            <td class="platformField"><img id="Blizzard" class="platform" src="logos/Blizzard.jpg"/></td>
+                            <td class="platformField"><img id="GOG" class="platform" src="logos/GOG.png"/></td>
+                        </tr>
+                        <tr>
+                            <td class="platformField"><img id="Epic" class="platform" src="logos/Epic.png"/></td>
+                            <td class="platformField"><img id="Origin" class="platform" src="logos/Origin.png"/></td>
+                            <td class="platformField"><img id="Steam" class="platform" src="logos/Steam.jpg"/></td>
+                            <td class="platformField"><img id="Twitch" class="platform" src="logos/Twitch.jpg"/></td>
+                            <td class="platformField"><img id="UPlay" class="platform" src="logos/UPlay.jpeg"/></td>
+                            <td class="platformField"><img id="Microsoft" class="platform" src="logos/Microsoft.jpg"/></td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="editSection">
+                    <input id="editButton" class="enableEditing" type="button" value="Edit Information"/>
                 </div>
             </div>
-    
-            <div id="navfooter">
-                Created by Makoto Morimoto
-            </div>		
-        </body>
-    </html>
+        </div>
+
+        <div id="navfooter">
+            Created by Makoto Morimoto
+        </div>		
+    </body>
+</html>

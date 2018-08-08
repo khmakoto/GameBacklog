@@ -1,41 +1,53 @@
 <DOCTYPE !HTML>
-    <html>
-        <head>
-            <title>Game Backlog</title>
-    
-            <link href="https://fonts.googleapis.com/css?family=Cagliostro" rel="stylesheet">
-            <link href="https://fonts.googleapis.com/css?family=Homemade Apple" rel="stylesheet">
-            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-            <link rel="stylesheet" type="text/css" href="css/general.css">
-            <link rel="stylesheet" type="text/css" href="css/alert.css">
-            <link rel="stylesheet" type="text/css" href="css/footer.css">
-            <link rel="stylesheet" type="text/css" href="css/navbar.css">
-            <link rel="stylesheet" type="text/css" href="css/search.css">
-            
-            <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-            <script type="text/javascript" src="js/jquery.keyframes.min.js"></script>
-            <script type="text/javascript" src="js/alert.js"></script>
-            <script type="text/javascript" src="js/navbar.js"></script>
-            <script type="text/javascript" src="js/search.js"></script>
-    
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        </head>
-        <body>
-            <div>
-                <ul id="navbar">
-                    <li id="homeButton" class="menuItem col-1 col-m-1"><i class="material-icons md-30">home</i></li>
-                    <li class="menuItem col-10 col-m-10">Welcome to your Game Backlog</li>
-                    <li id="newButton" class="menuItem col-1 col-m-1"><i class="material-icons md-30">add</i></li>
-                </ul>
+<html>
+    <head>
+        <title>Game Backlog</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Cagliostro" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Homemade Apple" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/general.css">
+        <link rel="stylesheet" type="text/css" href="css/alert.css">
+        <link rel="stylesheet" type="text/css" href="css/footer.css">
+        <link rel="stylesheet" type="text/css" href="css/navbar.css">
+        <link rel="stylesheet" type="text/css" href="css/search.css">
+        
+        <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery.keyframes.min.js"></script>
+        <script type="text/javascript" src="js/alert.js"></script>
+        <script type="text/javascript" src="js/navbar.js"></script>
+        <script type="text/javascript" src="js/search.js"></script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <ul id="navbar">
+                <li id="homeButton" class="menuItem col-1 col-m-1"><i class="material-icons md-30">home</i></li>
+                <li class="menuItem col-10 col-m-10">Welcome to your Game Backlog</li>
+                <li id="newButton" class="menuItem col-1 col-m-1"><i class="material-icons md-30">add</i></li>
+            </ul>
+        </div>
+
+        <div id="contents" class="col-12 col-m-12">
+            <div id="results" class="col-9 col-m-9">
             </div>
-    
-            <div id="contents" class="col-12 col-m-12">
-                <div id="results" class="col-9 col-m-9">
-                </div>
+        </div>
+
+        <div id="navfooter">
+            Created by Makoto Morimoto
+        </div>
+
+        <!-- Alert section -->
+        <div class="alertBackground"></div>
+        <div id="errorAlert" class="alert">
+            <div class="lineBreak"></div>
+            <div class="alertText"></div>
+            <div class="lineBreak"></div>
+            <div id="errorAlertButton" class="alertButton">
+                <i class="material-icons md-30">done</i>
             </div>
-    
-            <div id="navfooter">
-                Created by Makoto Morimoto
-            </div>		
-        </body>
-    </html>
+            <div class="lineBreak"></div>
+        </div>
+    </body>
+</html>

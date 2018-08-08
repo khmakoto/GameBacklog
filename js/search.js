@@ -42,8 +42,20 @@ $(document).ready(function() {
         },
         error: function(errorMsg) {
             console.log(errorMsg.statusText);
-            alert(errorMsg.statusText);
-            location.href = "index.html";
+            
+            $("#errorAlert").css("display", "flex");
+            $("#errorAlert > div").css("display", "flex");
+            $("#errorAlert").height("200px");
+            $("#errorAlert").css("top", "calc(50% - 150px)");
+            $("#errorAlert").css("top", "-webkit-calc(50% - 150px)");
+
+            $(".alertText").html(errorMsg.statusText);
+
+            $(".alertBackground").show();
         }
+    });
+
+    $("#errorAlertButton").on("click", function() {
+        setTimeout(function() { location.href = "index.html"; }, 1000);
     });
 });
