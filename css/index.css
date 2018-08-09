@@ -151,7 +151,7 @@
  **********************************/
 #statsSection {
     background-color: white;
-    height: 500px;
+    height: 520px;
     margin: 0 12.5% 0px 12.5%;
     padding: 15px 10px;
 }
@@ -217,6 +217,30 @@
 .statNum {
     display: block;
     font-size: 40px;
+}
+
+#buttonDiv {
+    float: left;
+    margin-top: -55px;
+    text-align: center;
+    width: 100%;
+}
+
+#platformButton {
+    background-color: #00eeba;
+    border: 0px;
+    border-radius: 20px;
+    color: black;
+    font-family: 'Cagliostro';
+    font-size: 20px;
+    outline: none;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+#platformButton:hover {
+    background-color: #00b991;
+    cursor: pointer;
 }
 
 /**********************************

@@ -15,6 +15,8 @@
 						break;
 			case 480:   $header .= "480 Error while updating game information in database.";
 						break;
+			case 500:	$header .= "500 No game found in database for the specified platform.";
+						break;
 			default:	$header .= "404 Request Not Found.";
 		}
 

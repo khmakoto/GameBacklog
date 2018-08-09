@@ -304,4 +304,14 @@ $(document).ready(function() {
             getPlatformStats(selection);
         }
     });
+
+    // Function to get all the games of a specific platform.
+    $("#platformButton").on("click", function() {
+        var selectedPlatform;
+        $(".active").each(function() {
+            selectedPlatform = $(this).html();
+            selectedPlatform = selectedPlatform.replace(" ", "");
+        });
+        location.href = "search.html?platform=" + selectedPlatform;
+    });
 });
