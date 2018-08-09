@@ -72,8 +72,10 @@ $(document).ready(function() {
         },
         error: function(errorMsg) {
             console.log(errorMsg.statusText);
-            alert(errorMsg.statusText);
-            location.href = "index.html";
+            showAlert($("#alert"), errorMsg.statusText);
+            $(".alertButton").on("click", function() {
+                setTimeout(function() { location.href = "index.html"; }, 1000);
+            });
         }
     });
 
@@ -115,13 +117,17 @@ $(document).ready(function() {
             data: updatedData,
             headers: {'Content-Type': 'application/x-www-form-urlencoded'},
             success: function(jsonData) {
-                alert("Information updated successfully.");
-                location.href = "item.html?name=" + $("#name").val();
+                showAlert($("#alert"), "Information updated successfully.");
+                $(".alertButton").on("click", function() {
+                    setTimeout(function() { location.href = "item.html?name=" + $("#name").val(); }, 1000);
+                });
             },
             error: function(errorMsg) {
                 console.log(errorMsg.statusText);
-                alert("Something wrong happened while uploading your info. Reloading page.");
-                location.reload();
+                showAlert($("#alert"), "Something wrong happened while uploading your info. Reloading page.");
+                $(".alertButton").on("click", function() {
+                    setTimeout(function() { location.reload(); }, 1000);
+                });                
             }
         });
     }
