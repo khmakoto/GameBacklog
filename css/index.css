@@ -209,7 +209,7 @@
     float: left;
     font-size: 14px;
     margin: 50px 0 0 6.25%;
-    padding: 50px 5px;
+    padding: 55px 5px;
     text-align: center;
     width: 25%;
 }
@@ -221,7 +221,7 @@
 
 #buttonDiv {
     float: left;
-    margin-top: -50px;
+    margin-top: -30px;
     text-align: center;
     width: 100%;
 }
@@ -249,7 +249,7 @@
  **********************************/
 #percentage {
     float: left;
-    margin: 50px 0 0 6.25%;
+    margin: 60px 0 0 6.25%;
 }
 
 svg {
