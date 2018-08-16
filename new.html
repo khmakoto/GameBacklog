@@ -10,13 +10,13 @@
         <link rel="stylesheet" type="text/css" href="css/alert.css">
         <link rel="stylesheet" type="text/css" href="css/footer.css">
         <link rel="stylesheet" type="text/css" href="css/navbar.css">
-        <link rel="stylesheet" type="text/css" href="css/item.css">
+        <link rel="stylesheet" type="text/css" href="css/new.css">
         
         <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="js/jquery.keyframes.min.js"></script>
         <script type="text/javascript" src="js/alert.js"></script>
         <script type="text/javascript" src="js/navbar.js"></script>
-        <script type="text/javascript" src="js/item.js"></script>
+        <script type="text/javascript" src="js/new.js"></script>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -40,13 +40,13 @@
                         <tr>
                             <td class="label">Name:</td>
                             <td class="inputField" colspan="6">
-                                <input id="name" class="input" type="text" value="" disabled="true" />
+                                <input id="name" class="input" type="text" value="" />
                             </td>
                         </tr>
                         <tr>
                             <td class="label">State:</td>
                             <td class="inputField" colspan="6">
-                                <select id="state" class="input" disabled="true">
+                                <select id="state" class="input">
                                     <option value="0">Not completed</option>
                                     <option value="1">Completed</option>
                                     <option value="2">Mainly multiplayer</option>
@@ -80,8 +80,8 @@
                         </tr>
                     </table>
                 </div>
-                <div id="editSection">
-                    <input id="editButton" class="enableEditing" type="button" value="Edit Information"/>
+                <div id="addSection">
+                    <input id="addButton" type="button" value="Add game"/>
                 </div>
             </div>
         </div>
