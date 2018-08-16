@@ -34,9 +34,25 @@
 }
 
 #itemImage {
+    cursor: pointer;
     max-height: 100%;
     max-width: 100%;
+    opacity: 1;
     vertical-align: middle;
+
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+
+#itemImage:hover {
+    opacity: 0.5;
+
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+
+#imageFileDialog {
+    visibility: hidden;
 }
 
 /**********************************

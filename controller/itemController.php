@@ -1,12 +1,12 @@
 <?php
 
-	# Header required when receiving content from the ajax at the front-end
+	# Header required when receiving content from the ajax at the front-end.
 	header("Content-type: application/json");
 
-	# Connection to the dataLayer
+	# Connection to the dataLayer.
 	require_once __DIR__ . "/../model/itemModel.php";	
 
-	# Execute the action that is being called in the ajax at the front-end
+	# Execute the action that is being called in the ajax at the front-end.
 	$action = $_POST["action"];
 
 	switch($action) {
@@ -20,7 +20,7 @@
 	function retrieveInformation() {
 		$name = $_POST["name"];
 
-		# Search for game info in Games table in database
+		# Search for game info in Games table in database.
 		$result = retrieveGameInfo($name);
 
 		if ($result["status"] == "COMPLETE") {
@@ -55,7 +55,7 @@
 		$UPlay = $_POST["UPlay"];
 		$Microsoft = $_POST["Microsoft"];
 
-		# Search for game info in Games table in database
+		# Update info in Games table in database.
 		$result = updateGameInfo($prevName, $name, $state, $PlayStation, $PlayStation2, $PlayStation3, $PlayStation4, $PSP,
 								 $GameboyAdvance, $NintendoDS, $Nintendo3DS, $NintendoSwitch, $XboxOne, $Blizzard, $GOG, $Epic,
 								 $Origin, $Steam, $Twitch, $UPlay, $Microsoft);

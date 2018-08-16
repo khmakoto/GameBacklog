@@ -107,7 +107,6 @@ $(document).ready(function() {
                 "Twitch": ($("#Twitch").hasClass("active") ? 1 : 0),
                 "UPlay": ($("#UPlay").hasClass("active") ? 1 : 0),
                 "Microsoft": ($("#Microsoft").hasClass("active") ? 1 : 0)};
-        console.log(updatedData);
 
         // Ajax call to upload new information to server.
         $.ajax({
