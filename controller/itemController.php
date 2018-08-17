@@ -19,6 +19,7 @@
 	# Action to retrieve game information.
 	function retrieveInformation() {
 		$name = $_POST["name"];
+		$name = str_replace("'", "''", $name);
 
 		# Search for game info in Games table in database.
 		$result = retrieveGameInfo($name);
@@ -35,6 +36,7 @@
 	function updateInformation() {
 		$prevName = $_POST["prevName"];
 		$name = $_POST["name"];
+		$name = str_replace("'", "''", $name);
 		$state = $_POST["state"];
 		$PlayStation = $_POST["PlayStation"];
 		$PlayStation2 = $_POST["PlayStation2"];

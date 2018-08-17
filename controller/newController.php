@@ -41,9 +41,12 @@
 
         # Get image info.
         list($type, $data) = explode(";", $image);
-            list(,$ext) = explode('/',$type);
-            list(, $data) = explode(",", $data);
-            $data = base64_decode($data);
+        list(,$ext) = explode('/',$type);
+        list(, $data) = explode(",", $data);
+        $data = base64_decode($data);
+
+        $imgName = $name;
+        $name = str_replace("'", "''", $name);
 
         # Add game info in Games table in database.
 		$result = addGameInfo($name, $state, $name.'.'.$ext, $PlayStation, $PlayStation2, $PlayStation3, $PlayStation4,
@@ -52,7 +55,7 @@
 
         if ($result["status"] == "COMPLETE") {
             # Add image to images folder.
-            file_put_contents(getcwd()."/../images/$name.$ext", $data);
+            file_put_contents(getcwd()."/../images/$imgName.$ext", $data);
 
             echo json_encode($result);
         }
