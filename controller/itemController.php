@@ -54,11 +54,12 @@
 		$Twitch = $_POST["Twitch"];
 		$UPlay = $_POST["UPlay"];
 		$Microsoft = $_POST["Microsoft"];
+		$PC = $_POST["PC"];
 
 		# Update info in Games table in database.
 		$result = updateGameInfo($prevName, $name, $state, $PlayStation, $PlayStation2, $PlayStation3, $PlayStation4, $PSP,
 								 $GameboyAdvance, $NintendoDS, $Nintendo3DS, $NintendoSwitch, $XboxOne, $Blizzard, $GOG, $Epic,
-								 $Origin, $Steam, $Twitch, $UPlay, $Microsoft);
+								 $Origin, $Steam, $Twitch, $UPlay, $Microsoft, $PC);
 
 		if ($result["status"] == "COMPLETE") {
 			echo json_encode($result);

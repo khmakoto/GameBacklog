@@ -87,6 +87,10 @@ $(document).ready(function() {
 
     // Function to update information.
     function updateInformation() {
+        var PC = $("#Blizzard").hasClass("active") || $("#GOG").hasClass("active") || $("#Epic").hasClass("active") ||
+                 $("#Origin").hasClass("active") || $("#Steam").hasClass("active") || $("#Twitch").hasClass("active") ||
+                 $("#UPlay").hasClass("active") || $("#Microsoft").hasClass("active");
+
         var updatedData =
                 {"action": "UPDATE", "prevName": prevName, "name": $("#name").val(), "state": $("#state").val(),
                 "PlayStation": ($("#PlayStation").hasClass("active") ? 1 : 0),
@@ -106,29 +110,51 @@ $(document).ready(function() {
                 "Steam": ($("#Steam").hasClass("active") ? 1 : 0),
                 "Twitch": ($("#Twitch").hasClass("active") ? 1 : 0),
                 "UPlay": ($("#UPlay").hasClass("active") ? 1 : 0),
-                "Microsoft": ($("#Microsoft").hasClass("active") ? 1 : 0)};
+                "Microsoft": ($("#Microsoft").hasClass("active") ? 1 : 0),
+                "PC": (PC ? 1 : 0)};
 
-        // Ajax call to upload new information to server.
-        $.ajax({
-            type: "POST",
-            url: "controller/itemController.php",
-            dataType: "json",
-            data: updatedData,
-            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-            success: function(jsonData) {
-                showAlert($("#alert"), "Information updated successfully.");
-                $(".alertButton").on("click", function() {
-                    setTimeout(function() { location.href = "item.html?name=" + $("#name").val(); }, 1000);
+        // A name must be specified.
+        if (updatedData.name != "") {
+            // At least one platform has to be chosen.
+            if (updatedData.PlayStation || updatedData.PlayStation2 || updatedData.PlayStation3 ||
+                updatedData.PlayStation4 || updatedData.PSP || updatedData.GameboyAdvance ||
+                updatedData.NintendoDS || updatedData.Nintendo3DS || updatedData.NintendoSwitch ||
+                updatedData.XboxOne || updatedData.PC) {
+                // Ajax call to upload new information to server.
+                $.ajax({
+                    type: "POST",
+                    url: "controller/itemController.php",
+                    dataType: "json",
+                    data: updatedData,
+                    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                    success: function(jsonData) {
+                        showAlert($("#alert"), "Information updated successfully.");
+                        $(".alertButton").on("click", function() {
+                            setTimeout(function() { location.href = "item.html?name=" + $("#name").val(); }, 1000);
+                        });
+                    },
+                    error: function(errorMsg) {
+                        console.log(errorMsg.statusText);
+                        showAlert($("#alert"), "Something wrong happened while uploading your info. Reloading page.");
+                        $(".alertButton").on("click", function() {
+                            setTimeout(function() { location.reload(); }, 1000);
+                        });                
+                    }
                 });
-            },
-            error: function(errorMsg) {
-                console.log(errorMsg.statusText);
-                showAlert($("#alert"), "Something wrong happened while uploading your info. Reloading page.");
-                $(".alertButton").on("click", function() {
-                    setTimeout(function() { location.reload(); }, 1000);
-                });                
             }
-        });
+            else {
+                showAlert($("#alert"), "At least one platform must be selected.");
+                $(".alertButton").on("click", function() {
+                    setTimeout(function() { $(".alertBackground").hide(); }, 500);
+                });
+            }
+        }
+        else {
+            showAlert($("#alert"), "A name must be specified for the game.");
+            $(".alertButton").on("click", function() {
+                setTimeout(function() { $(".alertBackground").hide(); }, 500);
+            });
+        }
     }
 
     // Function to edit information.
@@ -142,7 +168,7 @@ $(document).ready(function() {
             });
 
             $(".platform").css("cursor", "default");
-            $(".platform").on("click", function() {});
+            $(".platform").unbind("click");
 
             $("#editButton").removeClass("saveInformation");
             $("#editButton").addClass("enableEditing");
