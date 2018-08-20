@@ -45,11 +45,12 @@
         list(, $data) = explode(",", $data);
         $data = base64_decode($data);
 
-        $imgName = $name;
-        $name = str_replace("'", "''", $name);
+        $imgName = str_replace(":", "", $name);
+		$name = str_replace("'", "''", $name);
+		$dbImgName = str_replace(":", "", $name);
 
         # Add game info in Games table in database.
-		$result = addGameInfo($name, $state, $name.'.'.$ext, $PlayStation, $PlayStation2, $PlayStation3, $PlayStation4,
+		$result = addGameInfo($name, $state, $dbImgName.'.'.$ext, $PlayStation, $PlayStation2, $PlayStation3, $PlayStation4,
                               $PSP, $GameboyAdvance, $NintendoDS, $Nintendo3DS, $NintendoSwitch, $XboxOne, $Blizzard, $GOG, $Epic,
                               $Origin, $Steam, $Twitch, $UPlay, $Microsoft, $PC);
 

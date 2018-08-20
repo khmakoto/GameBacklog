@@ -1,5 +1,8 @@
 $(document).ready(function() {
     // Getting the game name from URL parameters and putting it in the correct input field.
+    if (location.href.indexOf("&") != -1) {
+        location.href = location.href.replace("&", "%26");
+    }
     var urlParams = new URLSearchParams(window.location.search);
     var name = urlParams.get("name");
     $("#name").val(name);
