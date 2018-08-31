@@ -116,8 +116,8 @@ td {
 #editSection {
     float: left;
     height: 20%;
-    text-align: center;
-    width: 60%;
+    text-align: right;
+    width: 36%;
 }
 
 #editButton {
@@ -154,4 +154,32 @@ td {
 
 .saveInformation:hover {
     background-color: #00e732;
+}
+
+/**********************************
+ * Delete information section.    *
+ **********************************/
+#deleteSection {
+    float: left;
+    height: 20%;
+    text-align: left;
+    width: 24%;
+}
+#deleteButton {
+    background-color: #ff4b4b;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    height: 50px;
+    margin-left: 10px;
+    outline: none;
+    width: 50px;
+}
+
+#deleteButton:hover {
+    background-color: #ff1010;
+    height: 55px;
+    margin-top: -3px;
+    padding-top: 3px;
+    width: 53px;
 }
