@@ -14,6 +14,8 @@
 									break;
 		case "UPDATE":				updateInformation();
 									break;
+		case "DELETE":				deleteInformation();
+									break;
 	}
 
 	# Action to retrieve game information.
@@ -62,6 +64,22 @@
 		$result = updateGameInfo($prevName, $name, $state, $PlayStation, $PlayStation2, $PlayStation3, $PlayStation4, $PSP,
 								 $GameboyAdvance, $NintendoDS, $Nintendo3DS, $NintendoSwitch, $XboxOne, $Blizzard, $GOG, $Epic,
 								 $Origin, $Steam, $Twitch, $UPlay, $Microsoft, $PC);
+
+		if ($result["status"] == "COMPLETE") {
+			echo json_encode($result);
+		}
+		else {
+			die(json_encode($result));
+		}
+	}
+
+	# Action to delete game information.
+	function deleteInformation() {
+		$name = $_POST["name"];
+		$name = str_replace("'", "''", $name);
+
+		# Delete game info in Games table in database.
+		$result = deleteGameInfo($name);
 
 		if ($result["status"] == "COMPLETE") {
 			echo json_encode($result);

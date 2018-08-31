@@ -206,4 +206,27 @@ $(document).ready(function() {
         }
     });
 
+    // Function to delete information.
+    $("#deleteButton").on("click", function() {
+        $.ajax({
+            type: "POST",
+            url: "controller/itemController.php",
+            dataType: "json",
+            data: {"action": "DELETE", "name": $("#name").val()},
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            success: function(jsonData) {
+                showAlert($("#alert"), "Game successfully deleted.");
+                $(".alertButton").on("click", function() {
+                    setTimeout(function() { location.href = "index.html" }, 1000);
+                });
+            },
+            error: function(errorMsg) {
+                console.log(errorMsg.statusText);
+                showAlert($("#alert"), "Something wrong happened while deleting game info. Reloading page.");
+                $(".alertButton").on("click", function() {
+                    setTimeout(function() { location.reload(); }, 1000);
+                });                
+            }
+        });
+    });
 });

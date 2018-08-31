@@ -42,7 +42,7 @@
         }
 	}
 
-	# Update to change game information
+	# Query to change game information
     function updateGameInfo($prevName, $name, $state, $PlayStation, $PlayStation2, $PlayStation3, $PlayStation4, $PSP,
 							$GameboyAdvance, $NintendoDS, $Nintendo3DS, $NintendoSwitch, $XboxOne, $Blizzard, $GOG, $Epic, $Origin,
 							$Steam, $Twitch, $UPlay, $Microsoft, $PC) {
@@ -72,6 +72,31 @@
         	$conn->close();
         	return errors(400);
         }
-    }
+	}
+	
+	# Query to delete game information.
+    function deleteGameInfo($name) {
+    	# Open and validate the Database connection.
+    	$conn = connect();
+
+        if ($conn != null) {
+        	$sql = "DELETE FROM Games WHERE Name = '$name'";
+			$result = $conn->query($sql);
+
+			if ($result === TRUE) {
+				$conn->close();
+				return array("status" => "COMPLETE");
+			}
+			else {
+				$conn->close();
+				return errors(540);
+			}
+        }
+        else {
+        	# Connection to Database was not successful.
+        	$conn->close();
+        	return errors(400);
+        }
+	}
 
 ?>
