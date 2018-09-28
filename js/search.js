@@ -3,7 +3,6 @@ $(document).ready(function() {
     var urlParams = new URLSearchParams(window.location.search);
     var searchTerm = urlParams.get("searchTerm");
     var platform = urlParams.get("platform");
-    console.log(searchTerm);
 
     // If there is a search term, search for it.
     if (searchTerm != null && searchTerm != "") {
@@ -30,8 +29,11 @@ $(document).ready(function() {
                     else if (jsonData.array[i].state == 1) {
                         result += "<div class=\"completed\">Completed</div>";
                     }
-                    else {
+                    else if (jsonData.array[i].state == 2){
                         result += "<div class=\"completed\">Mainly Multiplayer</div>";
+                    }
+                    else {
+                        result += "<div class=\"completed\">100% Completed</div>";
                     }
                     
                     result += "</div></div>";
@@ -75,8 +77,11 @@ $(document).ready(function() {
                     else if (jsonData.array[i].state == 1) {
                         result += "<div class=\"completed\">Completed</div>";
                     }
-                    else {
+                    else if (jsonData.array[i].state == 2){
                         result += "<div class=\"completed\">Mainly Multiplayer</div>";
+                    }
+                    else {
+                        result += "<div class=\"completed\">100% Completed</div>";
                     }
                     
                     result += "</div></div>";
