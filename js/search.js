@@ -42,8 +42,13 @@ $(document).ready(function() {
                 $("#results").append(result);
 
                 // Function to redirect to item page on click.
-                $(".result").on("click", function() {
-                    location.href = "item.html?name=" + $(this).attr("id");
+                $(".result").on("click", function(evt) {
+                    if (evt.ctrlKey || evt.metaKey) {
+                        window.open("item.html?name=" + $(this).attr("id"));
+                    }
+                    else {
+                        location.href = "item.html?name=" + $(this).attr("id");
+                    }
                 });
             },
             error: function(errorMsg) {
@@ -90,8 +95,13 @@ $(document).ready(function() {
                 $("#results").append(result);
 
                 // Function to redirect to item page on click.
-                $(".result").on("click", function() {
-                    location.href = "item.html?name=" + $(this).attr("id");
+                $(".result").on("click", function(evt) {
+                    if (evt.ctrlKey || evt.metaKey) {
+                        window.open("item.html?name=" + $(this).attr("id"));
+                    }
+                    else {
+                        location.href = "item.html?name=" + $(this).attr("id");
+                    }
                 });
             },
             error: function(errorMsg) {

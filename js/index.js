@@ -85,11 +85,21 @@ $(document).ready(function() {
                 }
 
                 // Function to redirect to item or view more page on click.
-                $(".suggestion").on("mousedown", function() {
-                    location.href = "item.html?name=" + $(this).attr("title");
+                $(".suggestion").on("mousedown", function(evt) {
+                    if (evt.ctrlKey || evt.metaKey) {
+                        window.open("item.html?name=" + $(this).attr("title"));
+                    }
+                    else {
+                        location.href = "item.html?name=" + $(this).attr("title");
+                    }
                 });
-                $(".viewMore").on("mousedown", function() {
-                    location.href = "search.html?searchTerm=" + $("#searchBar").val();
+                $(".viewMore").on("mousedown", function(evt) {
+                    if (evt.ctrlKey || evt.metaKey) {
+                        window.open("search.html?searchTerm=" + $("#searchBar").val());
+                    }
+                    else {
+                        location.href = "search.html?searchTerm=" + $("#searchBar").val();
+                    }
                 });
             },
             error: function(errorMsg){
@@ -180,7 +190,7 @@ $(document).ready(function() {
     });
 
     // Function to search for keyword in search.html when clicking on search button.
-    $("#searchButton").on("mousedown", function() {
+    $("#searchButton").on("mousedown", function(evt) {
         // If the search bar is not empty.
         if ($("#searchBar").val() != "") {
             // If there is at least one match, go to search.html.
@@ -191,7 +201,12 @@ $(document).ready(function() {
                 data: {"action": "SEARCH", "searchTerm": $("#searchBar").val()},
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 success: function(jsonData) {
-                    location.href = "search.html?searchTerm=" + $("#searchBar").val();
+                    if (evt.ctrlKey || evt.metaKey) {
+                        window.open("search.html?searchTerm=" + $("#searchBar").val());
+                    }
+                    else {
+                        location.href = "search.html?searchTerm=" + $("#searchBar").val();
+                    }
                 },
                 error: function(errorMsg) {
                     console.log(errorMsg.statusText);
@@ -306,12 +321,17 @@ $(document).ready(function() {
     });
 
     // Function to get all the games of a specific platform.
-    $("#platformButton").on("click", function() {
+    $("#platformButton").on("click", function(evt) {
         var selectedPlatform;
         $(".active").each(function() {
             selectedPlatform = $(this).html();
             selectedPlatform = selectedPlatform.replace(" ", "");
         });
-        location.href = "search.html?platform=" + selectedPlatform;
+        if (evt.ctrlKey || evt.metaKey) {
+            window.open("search.html?platform=" + selectedPlatform);
+        }
+        else {
+            location.href = "search.html?platform=" + selectedPlatform;
+        }
     });
 });
